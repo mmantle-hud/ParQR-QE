@@ -120,7 +120,7 @@ Generates a single parquet table containing the geometries from GADM and the YAG
 
 ## Running Queries
 
-### Run Qualitative Queries
+### Run Qualitative Queries (queryengine.qualquery.QualQuery)
 Execute queries using QSR
 * Inputs
 	- ./data/enhanced-kg/rcc8-network/encoded/rcc8.txt
@@ -130,7 +130,7 @@ Execute queries using QSR
 	- ./data/enhanced-kg/YAGO-VP/
 	- ./data/config/queries/queries.txt
 	- 8
-### Run Range Queries
+### Run Range Queries (queryengine.hybridquery.HybridQuery)
 Execute queries quantitatively first, and then using QSR
 * Inputs
 	- ./data/enhanced-kg/rcc8-network/encoded/rcc8.txt
