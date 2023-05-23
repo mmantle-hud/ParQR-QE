@@ -1,0 +1,56 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sc: <http://purl.org/science/owl/sciencecommons/>
+PREFIX schema: <http://schema.org/>
+PREFIX yago: <http://yago-knowledge.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?region
+  WHERE {
+  ?region rdf:type <http://yago-knowledge.org/resource/Regions_of_France>.
+  ?region geo:sfTouches <http://yago-knowledge.org/resource/Belgium>.
+}
+-----
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sc: <http://purl.org/science/owl/sciencecommons/>
+PREFIX schema: <http://schema.org/>
+PREFIX yago: <http://yago-knowledge.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?footballer
+WHERE {
+  ?footballer schema:memberOf <http://yago-knowledge.org/resource/FC_Barcelona>.
+  ?footballer schema:birthPlace ?birthPlace.
+  ?birthPlace geo:sfWithin <http://yago-knowledge.org/resource/Catalonia>.
+}
+-----
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sc: <http://purl.org/science/owl/sciencecommons/>
+PREFIX schema: <http://schema.org/>
+PREFIX yago: <http://yago-knowledge.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?actor ?birthplace ?state
+  WHERE {
+  ?actor schema:Award yago:Academy_Award_for_Best_Actor.
+  ?actor schema:birthPlace ?birthplace.
+  ?state rdf:type yago:U.S._state.
+  ?birthplace geo:sfWithin ?state.
+}
+-----
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sc: <http://purl.org/science/owl/sciencecommons/>
+PREFIX schema: <http://schema.org/>
+PREFIX yago: <http://yago-knowledge.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT ?museum
+WHERE{
+  ?museum rdf:type <http://schema.org/Museum>.
+  FILTER(geof:sfWithin(?museum,"POLYGON((4.321423 50.5882119,4.6269803 50.5869041,4.625607 50.7435868,4.3207364 50.7448903,4.321423 50.5882119))"^^geo:wktLiteral))
+}
+-----
