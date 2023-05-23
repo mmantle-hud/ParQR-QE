@@ -139,7 +139,7 @@ Execute queries quantitatively first, and then using QSR
 	- ./data/enhanced-kg/geometries
 	- ./data/config/predicates.txt
 	- ./data/enhanced-kg/YAGO-VP/
-	- ./data/config/queries/range-queries.txt
+	- ./data/config/queries/queries.txt
 	- hybrid
 	- 8
 
