@@ -5,6 +5,8 @@ ParQR-QE is a qualitative spatial reasoner designed to answer GeoSPARQL queries 
 
 This repository also contains an example dataset. This is comprised of a subset of the YAGO knowledge graph (./data/input/YAGO), and a subset of the GADM dataset (./data/inpt/GADM). The following provides a workflow for generating a knowledge graph using these inputs that can support GeoSPARQL queries. This is followed by examples of running queries. 
 
+## Knowledge Graph Generator
+
 ### ParseYAGO (kggenerator.parsers.ParseYAGO)
 Parses .nt files, generating parquet tables for each separate predicate.
 * Input
